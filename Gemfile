@@ -64,3 +64,4 @@ gem 'execjs'
 
 gem 'jquery'
 gem 'jquery-ui-rails'
+gem 'jquery-turbolinks'
