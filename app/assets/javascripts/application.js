@@ -9,14 +9,14 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+//= require jquery
 //= require jquery-ui
-//= require jquery.turbolinks
 //= require rails-ujs
+//= require jquery.turbolinks
 //= require activestorage
 //= require turbolinks
 //= require_tree .
 
-($document).ready(function(){
+$(document).ready(function(){
     console.log("ready");
 });

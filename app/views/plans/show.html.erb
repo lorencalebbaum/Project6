@@ -4,6 +4,41 @@
   <strong>Name:</strong>
   <%= @plan.name %>
 </p>
+<body id = "projBody">
+   <div id = "lincBackground"> </div>
 
+   <div id = "lincContainer">
+      <header class ="header">
+         <h1> LINC: Lexicon for Intelegent Navigation of Ciriculum</h1>
+      </header>
+      <div id = "leftUp">
+      </div>
+
+      <div id = "leftDown">
+
+         <p><a href = "/index.php">People's Choice Awards</a></p>
+
+         <p><a href = "/~tiberg/cs3220.html">Back To My page</a></p>
+
+      </div>
+        
+      <div id = "rightUp">
+      </div>
+
+      <div id = "rightDown">
+         <table id = "tab" class = "display">
+            <thead>
+               <tr>
+                  <th>Class ID</th>
+                  <th>Class Name</th>
+                  <th>Class Notes</th>
+                  <th>Credits</th>
+               </tr>
+               <tbody id = "tabBody">
+            </thead>
+         </table>
+      </div>
+   </div>
+</body>
 <%= link_to 'Edit', edit_plan_path(@plan) %> |
 <%= link_to 'Back', plans_path %>
