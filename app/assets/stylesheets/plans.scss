@@ -1,3 +1,133 @@
 // Place all the styles related to the Plans controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html, body {
+    margin: 0;
+    height:100%;
+ }
+#Apheader {
+    grid-area: ApHeader;
+}
+
+ body {
+     display: grid;
+     grid-template-rows: 1fr 6fr;
+     grid-template-columns: 1fr;
+     grid-template-areas:
+     "Apheader"
+     "lincContainer"
+ }
+
+ #lincContainer{
+    grid-area: lincContainer;
+    text-align: left;
+    font-family: "WindWaker";
+    color: #ffffff;
+    display: grid;
+    grid-template-rows: auto 1fr 1fr auto;
+    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+    "info header"
+    "LU RU"
+    "LD RD"
+    "footer footer";
+ }
+
+ .header {
+    text-align: center; 
+    grid-area: header;
+    background-color: rgba(0, 0, 0, .6); 
+ }
+
+ #leftUp {
+    margin: 10;
+    grid-area: LU;
+    font-family: "Open Sans";
+    background-color: rgba(0, 0, 0, 0.6);
+    border: solid;
+    border-radius: 10px;   
+ }
+ 
+ #leftDown {
+    margin: 10;
+    border: solid;
+    font-family: "Open Sans";
+    border-radius: 10px;
+    grid-area: LD;
+    background-color: rgba(0, 0, 0, 0.6);
+ }
+ #rightUp {
+    margin: 10;
+    font-family: "Open Sans";
+    grid-area: RU;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: solid;
+    border-radius: 10px;
+ }
+ #rightDown {
+    margin: 10;
+    grid-area: RD;
+    border: solid;
+    font-family: "Open Sans";
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+ }
+ .year{
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "title title title"
+    "semOne semTwo semThree";
+ }
+ 
+ .semesterOne{
+    grid-area: semOne;
+    color: black;
+    border-style: solid;
+    border-width: 5px;
+    padding-right:20px;
+    padding-left: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .8);
+ }
+ .semesterTwo{
+    grid-area:semTwo;
+    color: black;
+    border-style: solid;
+    border-width: 5px;
+    padding-right:20px;
+    padding-left: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .8);
+ }
+ .semesterThree{
+    grid-area: semThree;
+    color: black;
+    border-style: solid;
+    border-width: 5px;
+    padding-right:20px;
+    padding-left: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, .8);
+ }
+ table.dataTable thead .sorting, table.dataTable thead .sorting_asc, table.dataTable thead .sorting_desc, table.dataTable thead .sorting_asc_disabled, table.dataTable thead .sorting_desc_disabled{
+    filter: brightness(0) invert(100%);
+ }
+ 
+ label {
+    color: white;
+ }
+ .dataTables_wrapper .dataTables_paginate .paginate_button.disabled, .dataTables_wrapper .dataTables_paginate .paginateButton.disabled:hover, .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    color: white !important;
+ }
+ .dataTables_wrapper .dataTables_paginate .paginate_button{
+    color: white !important;
+ }
+ .dataTables_wrapper {
+    margin: 15
+ }
+ .title{
+    text-align: center;
+    grid-area:title;
+ }
