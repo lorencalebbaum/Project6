@@ -4,6 +4,36 @@
   <strong>Name:</strong>
   <%= @plan.name %>
 </p>
+<body id = "projBody">
+   <div id = "lincContainer">
+      <header class ="header">
+         <h1> LINC: Lexicon for Intelegent Navigation of Ciriculum</h1>
+      </header>
+      <div id = "leftUp">
+      </div>
 
-<%= link_to 'Edit', edit_plan_path(@plan) %> |
+      <div id = "leftDown">
+
+      </div>
+        
+      <div id = "rightUp">
+      </div>
+
+      <div id = "rightDown">
+         <table id = "tab" class = "display">
+         <% 
+            <thead>
+               <tr>
+                  <th>Class ID</th>
+                  <th>Class Name</th>
+                  <th>Class Notes</th>
+                  <th>Credits</th>
+               </tr>
+               <tbody id = "tabBody">
+            </thead>
+         </table>
+      </div>
+   </div>
+</body>
+<%= link_to 'Edit', edit_plan_path(@plan) %>
 <%= link_to 'Back', plans_path %>

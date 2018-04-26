@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  majors: one
+  catalogs: one
+  name: MyString
+
+two:
+  majors: two
+  catalogs: two
+  name: MyString
