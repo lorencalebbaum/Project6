@@ -23,3 +23,9 @@ user2.save!
 #give joe a couple of plans
 Plan.create(user_id: user1.id, name: "Plan1")
 Plan.create(user_id: user1.id, name: "Plan2")
+
+#create some majors
+Major.create(name: "Computer Science")
+Major.create(name: "Mechanical Engineering")
+
+#create some 
