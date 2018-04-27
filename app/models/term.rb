@@ -1,5 +1,4 @@
 class Term < ApplicationRecord
-  belongs_to :plan
-  has_many :term_courses
+  belongs_to(:year)
   has_many :courses, through: :term_courses
 end
