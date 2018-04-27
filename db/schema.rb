@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 2018_04_25_201915) do
   end
 
   create_table "catalogs", force: :cascade do |t|
+    t.integer "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "year"
   end
 
   create_table "course_catagories", force: :cascade do |t|
