@@ -59,30 +59,30 @@ Course.create(name: "OOD with C++", designator: "CS-1220", discription: "Seg Fau
 Course.create(name: "OS", designator: "CS-3320", discription: "It works somehow")
 
 #add some catagories
-Catagory.create(majors_id: major1.id, catalogs_id: catalog1.id, name: "Core")
-Catagory.create(majors_id: major1.id, catalogs_id: catalog1.id, name: "Electives")
-Catagory.create(majors_id: major1.id, catalogs_id: catalog1.id, name: "Cognates")
+Catagory.create(major_id: major1.id, catalog_id: catalog1.id, name: "Core")
+Catagory.create(major_id: major1.id, catalog_id: catalog1.id, name: "Electives")
+Catagory.create(major_id: major1.id, catalog_id: catalog1.id, name: "Cognates")
 
-Catagory.create(majors_id: major2.id, catalogs_id: catalog1.id, name: "Core")
-Catagory.create(majors_id: major2.id, catalogs_id: catalog1.id, name: "Electives")
-Catagory.create(majors_id: major2.id, catalogs_id: catalog1.id, name: "Cognates")
+Catagory.create(major_id: major2.id, catalog_id: catalog1.id, name: "Core")
+Catagory.create(major_id: major2.id, catalog_id: catalog1.id, name: "Electives")
+Catagory.create(major_id: major2.id, catalog_id: catalog1.id, name: "Cognates")
 
 #add some terms
-Term.create(plan_id: plan1.id, semester: "Spring", year: 2015)
-Term.create(plan_id: plan1.id, semester: "Fall", year: 2015)
-Term.create(plan_id: plan1.id, semester: "Summer", year: 2015)
+Term.create(plan_id: plan1.id, semester: "Spring")
+Term.create(plan_id: plan1.id, semester: "Fall")
+Term.create(plan_id: plan1.id, semester: "Summer")
 
-Term.create(plan_id: plan1.id, semester: "Spring", year: 2016)
-Term.create(plan_id: plan1.id, semester: "Fall", year: 2016)
-Term.create(plan_id: plan1.id, semester: "Summer", year: 2016)
+Term.create(plan_id: plan1.id, semester: "Spring")
+Term.create(plan_id: plan1.id, semester: "Fall")
+Term.create(plan_id: plan1.id, semester: "Summer")
 
-Term.create(plan_id: plan1.id, semester: "Spring", year: 2017)
-Term.create(plan_id: plan1.id, semester: "Fall", year: 2017)
-Term.create(plan_id: plan1.id, semester: "Summer", year: 2017)
+Term.create(plan_id: plan1.id, semester: "Spring")
+Term.create(plan_id: plan1.id, semester: "Fall")
+Term.create(plan_id: plan1.id, semester: "Summer")
 
-Term.create(plan_id: plan1.id, semester: "Spring", year: 2018)
-Term.create(plan_id: plan1.id, semester: "Fall", year: 2018)
-Term.create(plan_id: plan1.id, semester: "Summer", year: 2018)
+Term.create(plan_id: plan1.id, semester: "Spring")
+Term.create(plan_id: plan1.id, semester: "Fall")
+Term.create(plan_id: plan1.id, semester: "Summer")
 
 #create some years
 Year.create(plan_id: plan1.id, year: 2015)

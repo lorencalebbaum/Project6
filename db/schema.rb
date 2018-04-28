@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_25_201915) do
+ActiveRecord::Schema.define(version: 2018_04_28_012641) do
 
   create_table "catagories", force: :cascade do |t|
-    t.integer "majors_id"
-    t.integer "catalogs_id"
+    t.integer "major_id"
+    t.integer "catalog_id"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["catalogs_id"], name: "index_catagories_on_catalogs_id"
-    t.index ["majors_id"], name: "index_catagories_on_majors_id"
+    t.index ["catalog_id"], name: "index_catagories_on_catalog_id"
+    t.index ["major_id"], name: "index_catagories_on_major_id"
   end
 
   create_table "catalogs", force: :cascade do |t|
