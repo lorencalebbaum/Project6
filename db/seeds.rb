@@ -21,15 +21,34 @@ user2.password_confirmation = "password"
 user2.save!
 
 #give joe a couple of plans
-Plan.create(user_id: user1.id, name: "Plan1")
-Plan.create(user_id: user1.id, name: "Plan2")
+# Plan.create(user_id: user1.id, name: "Plan1")
+# Plan.create(user_id: user1.id, name: "Plan2")
+
+plan1 = Plan.new
+plan1.user_id = user1.id
+plan1.name = "Plan1"
+plan1.save!
+
+plan2 = Plan.new
+plan2.user_id = user1.id
+plan2.name = "Plan2"
+plan2.save
 
 #create some majors
-Major.create(name: "Computer Science")
-Major.create(name: "Mechanical Engineering")
+major1 = Major.new
+major1.name = "Computer Science"
+major1.save!
+
+major2 = Major.new
+major2.name = "Computer Engineering"
+major2.save!
 
 #create some Catalogs
-Catalog.create(year: 2015)
+#Catalog.create(year: 2015)
+
+catalog1 = Catalog.new
+catalog1.year = 2015
+catalog1.save!
 
 #add some courses
 Course.create(name: "Intro to C++", designator: "CS-1210", discription: "Hello...")
@@ -40,33 +59,33 @@ Course.create(name: "OOD with C++", designator: "CS-1220", discription: "Seg Fau
 Course.create(name: "OS", designator: "CS-3320", discription: "It works somehow")
 
 #add some catagories
-Catagory.create(majors_id: 1, catalogs_id: 1, name: "Core")
-Catagory.create(majors_id: 1, catalogs_id: 1, name: "Electives")
-Catagory.create(majors_id: 1, catalogs_id: 1, name: "Cognates")
+Catagory.create(majors_id: major1.id, catalogs_id: catalog1.id, name: "Core")
+Catagory.create(majors_id: major1.id, catalogs_id: catalog1.id, name: "Electives")
+Catagory.create(majors_id: major1.id, catalogs_id: catalog1.id, name: "Cognates")
 
-Catagory.create(majors_id: 2, catalogs_id: 1, name: "Core")
-Catagory.create(majors_id: 2, catalogs_id: 1, name: "Electives")
-Catagory.create(majors_id: 2, catalogs_id: 1, name: "Cognates")
+Catagory.create(majors_id: major2.id, catalogs_id: catalog1.id, name: "Core")
+Catagory.create(majors_id: major2.id, catalogs_id: catalog1.id, name: "Electives")
+Catagory.create(majors_id: major2.id, catalogs_id: catalog1.id, name: "Cognates")
 
 #add some terms
-Term.create(plan_id: 1, semester: "Spring", year: 2015)
-Term.create(plan_id: 1, semester: "Fall", year: 2015)
-Term.create(plan_id: 1, semester: "Summer", year: 2015)
+Term.create(plan_id: plan1.id, semester: "Spring", year: 2015)
+Term.create(plan_id: plan1.id, semester: "Fall", year: 2015)
+Term.create(plan_id: plan1.id, semester: "Summer", year: 2015)
 
-Term.create(plan_id: 1, semester: "Spring", year: 2016)
-Term.create(plan_id: 1, semester: "Fall", year: 2016)
-Term.create(plan_id: 1, semester: "Summer", year: 2016)
+Term.create(plan_id: plan1.id, semester: "Spring", year: 2016)
+Term.create(plan_id: plan1.id, semester: "Fall", year: 2016)
+Term.create(plan_id: plan1.id, semester: "Summer", year: 2016)
 
-Term.create(plan_id: 1, semester: "Spring", year: 2017)
-Term.create(plan_id: 1, semester: "Fall", year: 2017)
-Term.create(plan_id: 1, semester: "Summer", year: 2017)
+Term.create(plan_id: plan1.id, semester: "Spring", year: 2017)
+Term.create(plan_id: plan1.id, semester: "Fall", year: 2017)
+Term.create(plan_id: plan1.id, semester: "Summer", year: 2017)
 
-Term.create(plan_id: 1, semester: "Spring", year: 2018)
-Term.create(plan_id: 1, semester: "Fall", year: 2018)
-Term.create(plan_id: 1, semester: "Summer", year: 2018)
+Term.create(plan_id: plan1.id, semester: "Spring", year: 2018)
+Term.create(plan_id: plan1.id, semester: "Fall", year: 2018)
+Term.create(plan_id: plan1.id, semester: "Summer", year: 2018)
 
 #create some years
-Year.create(plan_id: 1, year: 2015)
-Year.create(plan_id: 1, year: 2016)
-Year.create(plan_id: 1, year: 2017)
-Year.create(plan_id: 1, year: 2018)
+Year.create(plan_id: plan1.id, year: 2015)
+Year.create(plan_id: plan1.id, year: 2016)
+Year.create(plan_id: plan1.id, year: 2017)
+Year.create(plan_id: plan1.id, year: 2018)
