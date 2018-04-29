@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.5'
 #gem 'bcrypt', '~> 3.1.7'
 #gem 'bcrypt', '~> 3.1.11'
 gem 'bcrypt', platforms: :ruby
+gem 'jquery-datatables-rails', '~> 3.4.0'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

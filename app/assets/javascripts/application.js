@@ -59,5 +59,21 @@ function getStuff(){
             }
             document.getElementById("rightUp").appendChild(currentYear); 
         } 
+        c = "http://localhost:3000/catalog/";
+        c += result.catalog_id;
+    
+        $.getJSON(c, function(catalog){
+            for(course in catalog.courses){
+            tableRow = document.createElement('tr');
+                for(info in coursePlan.catalog.courses[course]){
+                    tableCol = document.createElement('td');
+                    tableCol.textContent = coursePlan.catalog.courses[course][info];
+                    tableRow.append(tableCol);
+                }
+                document.getElementById("tabBody").appendChild(tableRow);
+            }
+            $("#tab").DataTable();
+        });   
     });
+
 }

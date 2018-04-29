@@ -20,6 +20,21 @@ user2.password = "password"
 user2.password_confirmation = "password"
 user2.save!
 
+catalog1 = Catalog.new
+catalog1.year = 2015
+catalog1.save!
+
+
+major1 = Major.new
+major1.name = "Computer Science"
+major1.catalogs_id = catalog1.id
+major1.save!
+
+major2 = Major.new
+major2.name = "Computer Engineering"
+major2.catalogs_id = catalog1.id
+major2.save!
+
 #give joe a couple of plans
 # Plan.create(user_id: user1.id, name: "Plan1")
 # Plan.create(user_id: user1.id, name: "Plan2")
@@ -27,37 +42,50 @@ user2.save!
 plan1 = Plan.new
 plan1.user_id = user1.id
 plan1.name = "Plan1"
+plan1.major_id = major1.id
+plan1.catalog_id = catalog1.id
 plan1.save!
 
 plan2 = Plan.new
 plan2.user_id = user1.id
+plan2.major_id = major1.id
 plan2.name = "Plan2"
+plan2.catalog_id = catalog1.id
 plan2.save
-
-#create some majors
-major1 = Major.new
-major1.name = "Computer Science"
-major1.save!
-
-major2 = Major.new
-major2.name = "Computer Engineering"
-major2.save!
 
 #create some Catalogs
 #Catalog.create(year: 2015)
-
-catalog1 = Catalog.new
-catalog1.year = 2015
-catalog1.save!
-
 #add some catagories
-Catagory.create(major_id: major1.id, catalog_id: catalog1.id, name: "Core")
-Catagory.create(major_id: major1.id, catalog_id: catalog1.id, name: "Electives")
-Catagory.create(major_id: major1.id, catalog_id: catalog1.id, name: "Cognates")
 
-Catagory.create(major_id: major2.id, catalog_id: catalog1.id, name: "Core")
-Catagory.create(major_id: major2.id, catalog_id: catalog1.id, name: "Electives")
-Catagory.create(major_id: major2.id, catalog_id: catalog1.id, name: "Cognates")
+category1 = Catagory.new
+category1.major_id= major1.id
+category1.name = "Core";
+category1.save!
+
+category2 = Catagory.new
+category2.major_id= major1.id
+category2.name = "Electives";
+category2.save!
+
+category3 = Catagory.new
+category3.major_id= major1.id
+category3.name = "Cognates";
+category3.save!
+
+category4 = Catagory.new
+category4.major_id= major2.id
+category4.name = "Core";
+category4.save!
+
+category5 = Catagory.new
+category5.major_id= major2.id
+category5.name = "Electives";
+category5.save!
+
+category6 = Catagory.new
+category6.major_id= major2.id
+category6.name = "Cognates";
+category6.save!
 
 year1 = Year.new
 year1.plan_id = plan1.id
@@ -182,3 +210,17 @@ TermCourse.create(term_id:term2.id, course_id: course3.id)
 TermCourse.create(term_id:term2.id, course_id: course4.id)
 TermCourse.create(term_id:term4.id, course_id: course5.id)
 TermCourse.create(term_id:term5.id, course_id: course6.id)
+
+CourseCatalog.create(catalog_id:catalog1.id, course_id: course1.id)
+CourseCatalog.create(catalog_id:catalog1.id, course_id: course2.id)
+CourseCatalog.create(catalog_id:catalog1.id, course_id: course3.id)
+CourseCatalog.create(catalog_id:catalog1.id, course_id: course4.id)
+CourseCatalog.create(catalog_id:catalog1.id, course_id: course5.id)
+CourseCatalog.create(catalog_id:catalog1.id, course_id: course6.id)
+
+CourseCatagory.create(catagory_id: category1.id, course_id: course1.id)
+CourseCatagory.create(catagory_id: category3.id, course_id: course2.id)
+CourseCatagory.create(catagory_id: category3.id, course_id: course3.id)
+CourseCatagory.create(catagory_id: category2.id, course_id: course4.id)
+CourseCatagory.create(catagory_id: category1.id, course_id: course5.id)
+CourseCatagory.create(catagory_id: category1.id, course_id: course6.id)
