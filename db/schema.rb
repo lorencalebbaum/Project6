@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_29_171512) do
+ActiveRecord::Schema.define(version: 2018_04_29_173920) do
 
   create_table "catagories", force: :cascade do |t|
     t.integer "major_id"
@@ -82,8 +82,8 @@ ActiveRecord::Schema.define(version: 2018_04_29_171512) do
     t.string "semester"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "years_id"
-    t.index ["years_id"], name: "index_terms_on_years_id"
+    t.integer "year_id"
+    t.index ["year_id"], name: "index_terms_on_year_id"
   end
 
   create_table "users", force: :cascade do |t|
