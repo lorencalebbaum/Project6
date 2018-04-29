@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_29_212217) do
+ActiveRecord::Schema.define(version: 2018_04_29_212545) do
 
   create_table "catagories", force: :cascade do |t|
     t.integer "major_id"
@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 2018_04_29_212217) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "catalog_id"
-    t.index ["catalog_id"], name: "index_majors_on_catalog_id"
+    t.integer "catalogs_id"
+    t.index ["catalogs_id"], name: "index_majors_on_catalogs_id"
   end
 
   create_table "plans", force: :cascade do |t|
