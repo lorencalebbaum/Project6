@@ -7,12 +7,10 @@ json.years plan.years do |year|
         json.semester term.semester
         json.year year.year
 
-        print term.inspect
-
-        json.courses term.catalog_courses do |catalogCourse|
-            json.name catalogCourse.course.name
-            json.designator catalogCourse.course.designator
-            json.credits catalogCourse.course.credits
+        json.courses term.term_courses do |term_course|
+            json.name term_course.course.name
+            json.designator term_course.course.designator
+            json.description term_course.course.discription
         end
     end
 end

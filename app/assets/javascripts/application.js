@@ -22,3 +22,42 @@
 $(document).ready(function(){
     console.log("ready");
 });
+
+function getStuff(){
+    var c = document.location.href;
+    c += ".json";
+    $.getJSON(c, function(result){
+        for(year of result.years){
+            var currentYear = document.createElement('div');
+            currentYear.className = "year";
+            title = document.createElement('p');
+            title.className = "title";
+            title.textContent = (year.year).toString() + " - " + (year.year + 1).toString();
+            currentYear.appendChild(title); 
+            var j = 0;
+            for(term of year.terms){
+               var currentTerm = document.createElement('div');
+               switch (j){
+                  case 0:
+                     currentTerm.className = "semesterOne";
+                  break;
+                  case 1:
+                     currentTerm.className = "semesterTwo";
+                  break;
+                  case 2:
+                     currentTerm.className = "semesterThree";
+                  break;
+               }
+               currentTerm.style.height = "150px";
+               j++;
+               currentYear.appendChild(currentTerm);
+               for(courses of term.courses){
+                  var courseEntry = document.createElement('p');
+                  courseEntry.textContent = courses.designator + " " + courses.name;
+                  currentTerm.appendChild(courseEntry);
+               }
+            }
+            document.getElementById("rightUp").appendChild(currentYear); 
+        } 
+    });
+}

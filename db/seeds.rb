@@ -50,14 +50,6 @@ catalog1 = Catalog.new
 catalog1.year = 2015
 catalog1.save!
 
-#add some courses
-Course.create(name: "Intro to C++", designator: "CS-1210", discription: "Hello...")
-Course.create(name: "Calculus I", designator: "Math-101", discription: "I'm at my limit")
-Course.create(name: "Physics I", designator: "PHYS-1250", discription: "Forces")
-Course.create(name: "Circuits", designator: "ENGE-2210", discription: "What a short class")
-Course.create(name: "OOD with C++", designator: "CS-1220", discription: "Seg Fault")
-Course.create(name: "OS", designator: "CS-3320", discription: "It works somehow")
-
 #add some catagories
 Catagory.create(major_id: major1.id, catalog_id: catalog1.id, name: "Core")
 Catagory.create(major_id: major1.id, catalog_id: catalog1.id, name: "Electives")
@@ -88,18 +80,105 @@ year4.year = 2018
 year4.save!
 
 #add some terms
-Term.create(years_id: year1.id, semester: "Spring")
-Term.create(years_id: year1.id, semester: "Fall")
-Term.create(years_id: year1.id, semester: "Summer")
+term1 =Term.new
+term1.year_id = year1.id
+term1.semester = "Spring"
+term1.save!
 
-Term.create(years_id: year2.id, semester: "Spring")
-Term.create(years_id: year2.id, semester: "Fall")
-Term.create(years_id: year2.id, semester: "Summer")
+term2 = Term.new
+term2.year_id = year1.id
+term2.semester = "Fall"
+term2.save!
 
-Term.create(years_id: year3.id, semester: "Spring")
-Term.create(years_id: year3.id, semester: "Fall")
-Term.create(years_id: year3.id, semester: "Summer")
+term3 = Term.new
+term3.year_id = year1.id
+term3.semester = "Summer"
+term3.save!
 
-Term.create(years_id: year4.id, semester: "Spring")
-Term.create(years_id: year4.id, semester: "Fall")
-Term.create(years_id: year4.id, semester: "Summer")
+term4 = Term.new
+term4.year_id = year2.id
+term4.semester = "Spring"
+term4.save!
+
+term5 = Term.new 
+term5.year_id = year2.id
+term5.semester = "Fall"
+term5.save!
+
+term6 = Term.new 
+term6.year_id = year2.id
+term6.semester = "Summer"
+term6.save!
+
+term7 = Term.new
+term7.year_id = year3.id
+term7.semester = "Spring"
+term7.save!
+
+term8 = Term.new 
+term8.year_id = year3.id
+term8.semester = "Fall"
+term8.save!
+
+term9 = Term.new 
+term9.year_id = year3.id
+term9.semester = "Summer"
+term9.save!
+
+term10 = Term.new
+term10.year_id = year4.id
+term10.semester = "Spring"
+term10.save!
+
+term11 = Term.new 
+term11.year_id = year4.id
+term11.semester = "Fall"
+term11.save!
+
+term12 = Term.new 
+term12.year_id = year4.id
+term12.semester = "Summer"
+term12.save!
+
+#add some courses
+course1 = Course.new
+course1.name ="Intro to C++"
+course1.designator = "CS-1210"
+course1.discription = "Hello..."
+course1.save!
+
+course2 = Course.new 
+course2.name = "Calculus I"
+course2.designator = "Math-101"
+course2.discription = "I'm at my limit"
+course2.save!
+
+course3 = Course.new
+course3.name = "Physics I"
+course3.designator = "PHYS-1250"
+course3.discription = "Forces";
+
+course4 = Course.new 
+course4.name = "Circuits"
+course4.designator = "ENGE-2210"
+course4.discription = "What a short class"
+course4.save!
+
+course5 = Course.new
+course5.name = "OOD with C++"
+course5.designator = "CS-1220"
+course5.discription = "Seg Fault"
+course5.save!
+
+course6 = Course.new
+course6.name = "OS"
+course6.designator = "CS-3320"
+course6.discription = "It works somehow"
+course6.save!
+
+TermCourse.create(term_id:term1.id, course_id: course1.id)
+TermCourse.create(term_id:term1.id, course_id: course2.id)
+TermCourse.create(term_id:term2.id, course_id: course3.id)
+TermCourse.create(term_id:term2.id, course_id: course4.id)
+TermCourse.create(term_id:term4.id, course_id: course5.id)
+TermCourse.create(term_id:term5.id, course_id: course6.id)
