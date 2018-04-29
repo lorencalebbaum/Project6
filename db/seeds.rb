@@ -67,25 +67,39 @@ Catagory.create(major_id: major2.id, catalog_id: catalog1.id, name: "Core")
 Catagory.create(major_id: major2.id, catalog_id: catalog1.id, name: "Electives")
 Catagory.create(major_id: major2.id, catalog_id: catalog1.id, name: "Cognates")
 
+year1 = Year.new
+year1.plan_id = plan1.id
+year1.year = 2015
+year1.save!
+
+year2 = Year.new
+year2.plan_id = plan1.id
+year2.year = 2016
+year2.save!
+
+year3 = Year.new
+year3.plan_id = plan1.id
+year3.year = 2017
+year3.save!
+
+year4 = Year.new
+year4.plan_id = plan1.id
+year4.year = 2018
+year4.save!
+
 #add some terms
-Term.create(plan_id: plan1.id, semester: "Spring")
-Term.create(plan_id: plan1.id, semester: "Fall")
-Term.create(plan_id: plan1.id, semester: "Summer")
+Term.create(years_id: year1.id, semester: "Spring")
+Term.create(years_id: year1.id, semester: "Fall")
+Term.create(years_id: year1.id, semester: "Summer")
 
-Term.create(plan_id: plan1.id, semester: "Spring")
-Term.create(plan_id: plan1.id, semester: "Fall")
-Term.create(plan_id: plan1.id, semester: "Summer")
+Term.create(years_id: year2.id, semester: "Spring")
+Term.create(years_id: year2.id, semester: "Fall")
+Term.create(years_id: year2.id, semester: "Summer")
 
-Term.create(plan_id: plan1.id, semester: "Spring")
-Term.create(plan_id: plan1.id, semester: "Fall")
-Term.create(plan_id: plan1.id, semester: "Summer")
+Term.create(years_id: year3.id, semester: "Spring")
+Term.create(years_id: year3.id, semester: "Fall")
+Term.create(years_id: year3.id, semester: "Summer")
 
-Term.create(plan_id: plan1.id, semester: "Spring")
-Term.create(plan_id: plan1.id, semester: "Fall")
-Term.create(plan_id: plan1.id, semester: "Summer")
-
-#create some years
-Year.create(plan_id: plan1.id, year: 2015)
-Year.create(plan_id: plan1.id, year: 2016)
-Year.create(plan_id: plan1.id, year: 2017)
-Year.create(plan_id: plan1.id, year: 2018)
+Term.create(years_id: year4.id, semester: "Spring")
+Term.create(years_id: year4.id, semester: "Fall")
+Term.create(years_id: year4.id, semester: "Summer")
