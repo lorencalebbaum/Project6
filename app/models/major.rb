@@ -1,4 +1,4 @@
 class Major < ApplicationRecord
-    belongs_to(:catalogs)
+    belongs_to(:catalog)
     has_many :catagories
 end

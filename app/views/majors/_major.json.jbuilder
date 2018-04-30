@@ -1,6 +1,6 @@
 json.extract! major, :id, :name
 
-json.categories magor.catagories do |category|
+json.categories major.catagories do |category|
     json.category category.name
     json.courses category.course_catagory do |category_course|
         json.name category_course.course.name

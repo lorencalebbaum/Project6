@@ -1,4 +1,4 @@
 class CourseCatagory < ApplicationRecord
-  belongs_to :courses
-  belongs_to :catagories
+  belongs_to :course
+  belongs_to :catagory
 end

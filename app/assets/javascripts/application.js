@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery-ui
 //= require rails-ujs
+//= require dataTables/jquery.dataTables
 //= require jquery.turbolinks
 //= require activestorage
 //= require jquery.turbolinks
@@ -51,26 +52,39 @@ function getStuff(){
                currentTerm.style.height = "150px";
                j++;
                currentYear.appendChild(currentTerm);
+               var credits = 0;
+               var termCredits = document.createElement('p');
+               currentTerm.appendChild(termCredits);
                for(courses of term.courses){
+                  credits += courses.credits;
                   var courseEntry = document.createElement('p');
-                  courseEntry.textContent = courses.designator + " " + courses.name;
+                  courseEntry.textContent = courses.designator + " | " + courses.name + " | " + courses.credits.toString();
                   currentTerm.appendChild(courseEntry);
                }
+               termCredits.textContent = "Total Credits: " + credits.toString();
             }
             document.getElementById("rightUp").appendChild(currentYear); 
         } 
-        c = "http://localhost:3000/catalog/";
-        c += result.catalog_id;
+        c = "http://localhost:3000/catalogs/";
+        c += result.catalog_id + ".json";
     
         $.getJSON(c, function(catalog){
-            for(course in catalog.courses){
+            for(course of catalog.courses){
             tableRow = document.createElement('tr');
-                for(info in coursePlan.catalog.courses[course]){
-                    tableCol = document.createElement('td');
-                    tableCol.textContent = coursePlan.catalog.courses[course][info];
-                    tableRow.append(tableCol);
-                }
-                document.getElementById("tabBody").appendChild(tableRow);
+            tableCol1 = document.createElement('td');
+            tableCol1.textContent = course.designator;
+            tableRow.append(tableCol1);
+            tableCol2 = document.createElement('td');
+            tableCol2.textContent = course.name;
+            tableRow.append(tableCol2);
+            tableCol3 = document.createElement('td');
+            tableCol3.textContent = course.description;
+            tableRow.append(tableCol3);
+            tableCol4 = document.createElement('td');
+            tableCol4.textContent = course.credits;
+            tableRow.append(tableCol4);
+            document.getElementById("tabBody").appendChild(tableRow);
+
             }
             $("#tab").DataTable();
         });   

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_29_212545) do
+ActiveRecord::Schema.define(version: 2018_04_30_182143) do
 
   create_table "catagories", force: :cascade do |t|
     t.integer "major_id"
@@ -27,21 +27,21 @@ ActiveRecord::Schema.define(version: 2018_04_29_212545) do
   end
 
   create_table "course_catagories", force: :cascade do |t|
-    t.integer "courses_id"
-    t.integer "catagories_id"
+    t.integer "course_id"
+    t.integer "catagory_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["catagories_id"], name: "index_course_catagories_on_catagories_id"
-    t.index ["courses_id"], name: "index_course_catagories_on_courses_id"
+    t.index ["catagory_id"], name: "index_course_catagories_on_catagory_id"
+    t.index ["course_id"], name: "index_course_catagories_on_course_id"
   end
 
   create_table "course_catalogs", force: :cascade do |t|
-    t.integer "courses_id"
-    t.integer "catalogs_id"
+    t.integer "course_id"
+    t.integer "catalog_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["catalogs_id"], name: "index_course_catalogs_on_catalogs_id"
-    t.index ["courses_id"], name: "index_course_catalogs_on_courses_id"
+    t.index ["catalog_id"], name: "index_course_catalogs_on_catalog_id"
+    t.index ["course_id"], name: "index_course_catalogs_on_course_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(version: 2018_04_29_212545) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "catalogs_id"
-    t.index ["catalogs_id"], name: "index_majors_on_catalogs_id"
+    t.integer "catalog_id"
+    t.index ["catalog_id"], name: "index_majors_on_catalog_id"
   end
 
   create_table "plans", force: :cascade do |t|
@@ -66,10 +66,10 @@ ActiveRecord::Schema.define(version: 2018_04_29_212545) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "majors_id"
-    t.integer "catalogs_id"
-    t.index ["catalogs_id"], name: "index_plans_on_catalogs_id"
-    t.index ["majors_id"], name: "index_plans_on_majors_id"
+    t.integer "major_id"
+    t.integer "catalog_id"
+    t.index ["catalog_id"], name: "index_plans_on_catalog_id"
+    t.index ["major_id"], name: "index_plans_on_major_id"
   end
 
   create_table "term_courses", force: :cascade do |t|

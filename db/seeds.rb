@@ -27,12 +27,12 @@ catalog1.save!
 
 major1 = Major.new
 major1.name = "Computer Science"
-major1.catalogs_id = catalog1.id
+major1.catalog_id = catalog1.id
 major1.save!
 
 major2 = Major.new
 major2.name = "Computer Engineering"
-major2.catalogs_id = catalog1.id
+major2.catalog_id = catalog1.id
 major2.save!
 
 #give joe a couple of plans
@@ -172,36 +172,43 @@ term12.save!
 course1 = Course.new
 course1.name ="Intro to C++"
 course1.designator = "CS-1210"
-course1.discription = "Hello..."
+course1.description = "Hello..."
+course1.credits = 3
 course1.save!
 
 course2 = Course.new 
 course2.name = "Calculus I"
 course2.designator = "Math-101"
-course2.discription = "I'm at my limit"
+course2.description = "I'm at my limit"
+course2.credits = 5
 course2.save!
 
 course3 = Course.new
 course3.name = "Physics I"
 course3.designator = "PHYS-1250"
-course3.discription = "Forces";
+course3.description = "Forces";
+course3.credits = 5
+course3.save!
 
 course4 = Course.new 
 course4.name = "Circuits"
 course4.designator = "ENGE-2210"
-course4.discription = "What a short class"
+course4.description = "What a short class"
+course4.credits = 3
 course4.save!
 
 course5 = Course.new
 course5.name = "OOD with C++"
 course5.designator = "CS-1220"
-course5.discription = "Seg Fault"
+course5.description = "Seg Fault"
+course5.credits = 3
 course5.save!
 
 course6 = Course.new
 course6.name = "OS"
 course6.designator = "CS-3320"
-course6.discription = "It works somehow"
+course6.description = "It works somehow"
+course6.credits = 3
 course6.save!
 
 TermCourse.create(term_id:term1.id, course_id: course1.id)
