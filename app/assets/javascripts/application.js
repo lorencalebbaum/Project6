@@ -87,7 +87,35 @@ function getStuff(){
 
             }
             $("#tab").DataTable();
-        });   
+        });
+        
+         //set side bar
+        c = "http://localhost:3000/majors/";
+        c += result.major_id + ".json";
+
+        $.getJSON(c, function(data){
+            for(cat in data.categories){
+                var temp = cat;
+                title = document.createElement('h3');
+                title.textContent = data.categories[cat].category;
+                var accordion = document.createElement('div');
+                for(course in data.categories[cat].courses){
+                    var courseItem = document.createElement('p');
+                    var currentCourse = data.categories[cat].courses[course];
+                    
+                    courseItem.textContent = currentCourse.designator + " " +  currentCourse.name;
+                    accordion.appendChild(courseItem);
+                   
+                }
+                document.getElementById("leftUp").appendChild(title);
+                document.getElementById("leftUp").appendChild(accordion);
+             }
+             $("#leftUp").accordion({
+                collapsible: true,
+                heightStyle: "content"
+             });
+        });
     });
+
 
 }
