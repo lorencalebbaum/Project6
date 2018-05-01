@@ -4,7 +4,10 @@
   <strong>Name:</strong>
   <%= @plan.name %>
 </p>
-<body id = "projBody" onload = "getStuff()">
+<body id = "projBody">
+<script>
+  $(document).ready(getStuff());
+</script>
    <div id = "lincContainer">
       <header class ="header">
          <h1> LINC: Lexicon for Intelegent Navigation of Ciriculum</h1>

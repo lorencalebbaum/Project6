@@ -211,6 +211,13 @@ course6.description = "It works somehow"
 course6.credits = 3
 course6.save!
 
+course7 = Course.new
+course7.name = "Compiler"
+course7.designator = "CS-3510"
+course7.description = "Compiler is 'way cool'"
+course7.credits = 3
+course7.save!
+
 TermCourse.create(term_id:term1.id, course_id: course1.id)
 TermCourse.create(term_id:term1.id, course_id: course2.id)
 TermCourse.create(term_id:term2.id, course_id: course3.id)
@@ -231,3 +238,4 @@ CourseCatagory.create(catagory_id: category3.id, course_id: course3.id)
 CourseCatagory.create(catagory_id: category2.id, course_id: course4.id)
 CourseCatagory.create(catagory_id: category1.id, course_id: course5.id)
 CourseCatagory.create(catagory_id: category1.id, course_id: course6.id)
+CourseCatagory.create(catagory_id: category1.id, course_id: course7.id)

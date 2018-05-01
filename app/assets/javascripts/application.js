@@ -26,6 +26,7 @@ $(document).ready(function(){
 
 function getStuff(){
     var c = document.location.href;
+    var planned = {};
     c += ".json";
     $.getJSON(c, function(result){
         for(year of result.years){
@@ -60,6 +61,7 @@ function getStuff(){
                   var courseEntry = document.createElement('p');
                   courseEntry.textContent = courses.designator + " | " + courses.name + " | " + courses.credits.toString();
                   currentTerm.appendChild(courseEntry);
+                  planned[courses.designator] = courses.designator;
                }
                termCredits.textContent = "Total Credits: " + credits.toString();
             }
@@ -104,6 +106,13 @@ function getStuff(){
                     var currentCourse = data.categories[cat].courses[course];
                     
                     courseItem.textContent = currentCourse.designator + " " +  currentCourse.name;
+                    if(currentCourse.designator == planned[currentCourse.designator]){
+                        courseItem.style.backgroundColor = "green";
+                    }
+                    else{
+                        courseItem.style.backgroundColor = "red";  
+                    }
+                    courseItem.style.color = "white";
                     accordion.appendChild(courseItem);
                    
                 }

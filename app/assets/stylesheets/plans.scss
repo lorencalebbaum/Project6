@@ -9,15 +9,6 @@ html, body {
     grid-area: ApHeader;
 }
 
- body {
-     display: grid;
-     grid-template-rows: 1fr 6fr;
-     grid-template-columns: 1fr;
-     grid-template-areas:
-     "Apheader"
-     "lincContainer"
- }
-
  #lincContainer{
     grid-area: lincContainer;
     text-align: left;
@@ -35,6 +26,7 @@ html, body {
  .header {
     text-align: center; 
     grid-area: header;
+    color:white;
     background-color: rgba(0, 0, 0, .6); 
  }
 
